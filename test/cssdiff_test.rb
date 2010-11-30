@@ -54,5 +54,12 @@ module CSSDiff
       assert_equal @result.to_s, compare
     end
     
+    def test_compare_dirs
+      dir1 = Dir.glob('fixtures/dir1/*.css')
+      dir2 = Dir.glob('fixtures/dir2/*.css')
+      compare = CSSDiff.compare_dirs(dir1, dir2)
+      assert_equal @result.to_s, compare
+    end
+    
   end  
 end

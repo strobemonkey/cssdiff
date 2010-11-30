@@ -1,0 +1,8 @@
+.ui-jqgrid table{
+    border-collapse: inherit;
+    border-spacing:inherit;
+}
+
+.ui-jqgrid .ui-jqgrid-titlebar{
+    padding: 0.4em 0.2em 0.3em 0.3em;
+}

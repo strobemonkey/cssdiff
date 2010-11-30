@@ -18,7 +18,7 @@ module CSSPool
 end
 
 module CSSDiff
-  def CSSDiff.compare doc1, doc2
+  def self.compare doc1, doc2
     doc1 = CSSPool.CSS doc1
     doc2 = CSSPool.CSS doc2
     
@@ -30,9 +30,20 @@ module CSSDiff
     result = (rs1 | rs2) - (rs1 & rs2)
     result.to_s
   end
-  def CSSDiff.compare_files file1, file2
+  def self.compare_files file1, file2
     doc1 = file1.read
     doc2 = file2.read
     CSSDiff.compare(doc1, doc2)
+  end
+  def self.compare_dirs dir1, dir2
+    doc1 = concat_files(dir1)
+    doc2 = concat_files(dir2)
+    CSSDiff.compare(doc1, doc2)
+  end
+  private
+  def self.concat_files(dir)
+    doc = ""
+    dir.each {|f| doc += open(f).read }
+    doc
   end
 end

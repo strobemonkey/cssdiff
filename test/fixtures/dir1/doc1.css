@@ -1,0 +1,13 @@
+.ui-jqgrid table{
+    border-collapse: inherit;
+    border-spacing:inherit;
+}
+
+.ui-jqgrid .ui-jqgrid-titlebar{
+    padding: 0.4em 0.2em 0.3em 0.3em;
+}
+
+.ui-jqgrid tr.jqgrow td, .ui-jqgrid-htable tr th{
+    border-bottom: 1px solid #E0EDA8;
+    border-right: 1px solid #E0EDA8;
+}
